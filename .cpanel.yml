@@ -3,12 +3,37 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/fedwrqmy/public_html/
     - /bin/rm -rf $DEPLOYPATH/*
-    - /bin/mkdir -p $DEPLOYPATH/_app/immutable/assets
-    - /bin/mkdir -p $DEPLOYPATH/_app/immutable/entry
-    - /bin/cp -R build/* $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH
-    - /bin/cp -R build/_app/immutable/assets/* $DEPLOYPATH/_app/immutable/assets/
-    - /bin/cp -R build/_app/immutable/entry/* $DEPLOYPATH/_app/immutable/entry/
-    - /bin/cp build/_app/immutable/assets/app.css $DEPLOYPATH/app.css
-    - /bin/cp build/_app/immutable/entry/start.js $DEPLOYPATH/start.js
-    - /bin/cp build/_app/immutable/entry/app.js $DEPLOYPATH/app.js 
+    
+    # Create WordPress theme directory
+    - /bin/mkdir -p $DEPLOYPATH/wp-content/themes/ogabal-theme
+    - /bin/mkdir -p $DEPLOYPATH/wp-content/themes/ogabal-theme/assets/css
+    
+    # Copy WordPress core files
+    - /bin/cp -R wordpress/* $DEPLOYPATH/
+    
+    # Copy theme files
+    - /bin/cp header.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp footer.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp functions.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp index.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp page.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp single.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp 404.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp page-about.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp page-services.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp page-contact.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp front-page.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    - /bin/cp style.css $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    
+    # Copy assets
+    - /bin/cp -R assets/css/* $DEPLOYPATH/wp-content/themes/ogabal-theme/assets/css/
+    
+    # Copy configuration files
+    - /bin/cp wp-config.php $DEPLOYPATH/
+    - /bin/cp .htaccess $DEPLOYPATH/
+    
+    # Set permissions
+    - /bin/chmod 755 $DEPLOYPATH/wp-content
+    - /bin/chmod 644 $DEPLOYPATH/wp-config.php
+    - /bin/find $DEPLOYPATH/wp-content/themes/ogabal-theme -type d -exec chmod 755 {} \;
+    - /bin/find $DEPLOYPATH/wp-content/themes/ogabal-theme -type f -exec chmod 644 {} \; 
