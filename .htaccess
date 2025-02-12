@@ -31,3 +31,11 @@ AddType image/gif .gif
 
 # Prevent directory listing
 Options -Indexes 
+
+<FilesMatch "\.(css)$">
+    ForceType text/css
+</FilesMatch>
+
+<FilesMatch "\.(js)$">
+    ForceType application/javascript
+</FilesMatch> 
