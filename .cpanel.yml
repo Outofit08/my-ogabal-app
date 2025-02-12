@@ -2,7 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/fedwrqmy/public_html/
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/mkdir -p $DEPLOYPATH/_app
     - /bin/cp -R build/* $DEPLOYPATH
-    - /bin/cp build/.htaccess $DEPLOYPATH
-    - /bin/cp build/index.html $DEPLOYPATH
-    - /bin/cp build/_app/* $DEPLOYPATH/_app/ 
+    - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/cp -R build/_app/* $DEPLOYPATH/_app/ 
