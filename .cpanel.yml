@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fedwrqmy/public_html/
+    - export DEPLOYPATH=/home2/fedwrqmy/public_html/
     - /bin/cp -R * $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp ./build/* $DEPLOYPATH
