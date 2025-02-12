@@ -24,11 +24,18 @@
 <FilesMatch "\.js$">
     ForceType application/javascript
     Header set Content-Type application/javascript
+    Header set Content-Type "text/javascript; charset=UTF-8"
+</FilesMatch>
+
+<FilesMatch "\.(js|mjs)$">
+    AddType application/javascript .js
+    AddType application/javascript .mjs
+    Header set Content-Type application/javascript
 </FilesMatch>
 
 # Set correct MIME types
 AddType text/css .css
-AddType application/javascript .js
+AddType application/javascript .js .mjs
 AddType application/json .json
 AddType text/html .html
 AddType image/svg+xml .svg
