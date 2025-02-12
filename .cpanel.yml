@@ -2,14 +2,43 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/fedwrqmy/public_html/
+    - export TEMPPATH=/home2/fedwrqmy/tmp/wordpress_install
+    
+    # Create temporary directory
+    - /bin/mkdir -p $TEMPPATH
+    
+    # Download and extract WordPress
+    - cd $TEMPPATH
+    - /usr/bin/wget https://wordpress.org/latest.tar.gz
+    - /bin/tar -xzf latest.tar.gz
+    
+    # Clear destination directory
     - /bin/rm -rf $DEPLOYPATH/*
     
-    # Create WordPress theme directory
-    - /bin/mkdir -p $DEPLOYPATH/wp-content/themes/ogabal-theme
-    - /bin/mkdir -p $DEPLOYPATH/wp-content/themes/ogabal-theme/assets/css
+    # Copy WordPress files
+    - /bin/cp -R $TEMPPATH/wordpress/* $DEPLOYPATH/
     
-    # Copy WordPress core files
-    - /bin/cp -R wordpress/* $DEPLOYPATH/
+    # Create wp-content directories
+    - /bin/mkdir -p $DEPLOYPATH/wp-content/themes/ogabal-theme
+    - /bin/mkdir -p $DEPLOYPATH/wp-content/uploads
+    
+    # Set permissions
+    - /bin/chmod 755 $DEPLOYPATH/wp-content
+    - /bin/chmod 755 $DEPLOYPATH/wp-content/themes
+    - /bin/chmod 755 $DEPLOYPATH/wp-content/uploads
+    
+    # Clean up
+    - /bin/rm -rf $TEMPPATH
+    
+    # Copy our theme files
+    - /bin/cp -R theme/* $DEPLOYPATH/wp-content/themes/ogabal-theme/
+    
+    # Copy configuration
+    - /bin/cp wp-config.php $DEPLOYPATH/
+    - /bin/cp .htaccess $DEPLOYPATH/
+    
+    # Create WordPress theme directory
+    - /bin/mkdir -p $DEPLOYPATH/wp-content/themes/ogabal-theme/assets/css
     
     # Copy theme files
     - /bin/cp header.php $DEPLOYPATH/wp-content/themes/ogabal-theme/
@@ -28,12 +57,7 @@ deployment:
     # Copy assets
     - /bin/cp -R assets/css/* $DEPLOYPATH/wp-content/themes/ogabal-theme/assets/css/
     
-    # Copy configuration files
-    - /bin/cp wp-config.php $DEPLOYPATH/
-    - /bin/cp .htaccess $DEPLOYPATH/
-    
     # Set permissions
-    - /bin/chmod 755 $DEPLOYPATH/wp-content
     - /bin/chmod 644 $DEPLOYPATH/wp-config.php
     - /bin/find $DEPLOYPATH/wp-content/themes/ogabal-theme -type d -exec chmod 755 {} \;
     - /bin/find $DEPLOYPATH/wp-content/themes/ogabal-theme -type f -exec chmod 644 {} \; 
