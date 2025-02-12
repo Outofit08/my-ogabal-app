@@ -7,6 +7,16 @@
   RewriteRule . /index.html [L]
 </IfModule>
 
+# Set correct MIME types
+AddType text/css .css
+AddType application/javascript .js
+AddType application/json .json
+AddType text/html .html
+AddType image/svg+xml .svg
+AddType image/png .png
+AddType image/jpeg .jpg .jpeg
+AddType image/gif .gif
+
 # Cache static assets
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -17,4 +27,7 @@
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
-</IfModule> 
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes 
