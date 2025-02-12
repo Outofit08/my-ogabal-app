@@ -23,10 +23,20 @@ jobs:
         npm install
         npm run build
         
+    - name: Prepare for deployment
+      run: |
+        touch build/.htaccess
+        echo "RewriteEngine On" >> build/.htaccess
+        echo "RewriteBase /" >> build/.htaccess
+        echo "RewriteRule ^index\.html$ - [L]" >> build/.htaccess
+        echo "RewriteCond %{REQUEST_FILENAME} !-f" >> build/.htaccess
+        echo "RewriteCond %{REQUEST_FILENAME} !-d" >> build/.htaccess
+        echo "RewriteRule . /index.html [L]" >> build/.htaccess
+        
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v5.0.0
       with:
         REMOTE_HOST: ${{ secrets.SSH_HOST }}
         REMOTE_USER: ${{ secrets.SSH_USERNAME }}
-        SOURCE: "./"
+        SOURCE: "build/"
         TARGET: "/home/${{ secrets.SSH_USERNAME }}/public_html/" 
