@@ -1,0 +1,38 @@
+:root {
+  --primary: #1a1f3c;
+  --secondary: #2c3454;
+  --accent: #4a90e2;
+  --text: #e4e4e4;
+  --text-muted: #a0a0a0;
+  --border: #3a3f5c;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+}
+
+footer {
+  background-color: var(--secondary);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+} 
