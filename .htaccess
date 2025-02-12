@@ -32,6 +32,10 @@ AddType image/gif .gif
 # Prevent directory listing
 Options -Indexes 
 
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
 <FilesMatch "\.css$">
     ForceType text/css
     Header set Content-Type text/css
