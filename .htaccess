@@ -1,7 +1,10 @@
+# Enable CORS and Security Headers
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
+    Header set Access-Control-Allow-Origin "*"
 </IfModule>
 
+# Handle SvelteKit SPA routing
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
@@ -9,10 +12,19 @@
     # If the request is not for a valid file or directory
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    
-    # Rewrite all requests to index.html
     RewriteRule ^ index.html [L]
 </IfModule>
+
+# Force correct MIME types for specific files
+<FilesMatch "\.css$">
+    ForceType text/css
+    Header set Content-Type text/css
+</FilesMatch>
+
+<FilesMatch "\.js$">
+    ForceType application/javascript
+    Header set Content-Type application/javascript
+</FilesMatch>
 
 # Set correct MIME types
 AddType text/css .css
@@ -39,12 +51,16 @@ AddType image/gif .gif
 # Prevent directory listing
 Options -Indexes 
 
-<FilesMatch "\.css$">
-    ForceType text/css
-    Header set Content-Type text/css
-</FilesMatch>
+<Directory "/home2/fedwrqmy/public_html/_app/immutable/assets">
+    <FilesMatch "\.css$">
+        ForceType text/css
+        Header set Content-Type text/css
+    </FilesMatch>
+</Directory>
 
-<FilesMatch "\.js$">
-    ForceType application/javascript
-    Header set Content-Type application/javascript
-</FilesMatch> 
+<Directory "/home2/fedwrqmy/public_html/_app/immutable/entry">
+    <FilesMatch "\.js$">
+        ForceType application/javascript
+        Header set Content-Type application/javascript
+    </FilesMatch>
+</Directory> 

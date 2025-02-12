@@ -4,9 +4,11 @@ deployment:
     - export DEPLOYPATH=/home2/fedwrqmy/public_html/
     - /bin/rm -rf $DEPLOYPATH/*
     - /bin/mkdir -p $DEPLOYPATH/_app/immutable/assets
+    - /bin/mkdir -p $DEPLOYPATH/_app/immutable/entry
     - /bin/cp -R build/* $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp -R build/_app/immutable/assets/* $DEPLOYPATH/_app/immutable/assets/
+    - /bin/cp -R build/_app/immutable/entry/* $DEPLOYPATH/_app/immutable/entry/
     - /bin/cp build/_app/immutable/assets/app.css $DEPLOYPATH/app.css
     - /bin/cp build/_app/immutable/entry/start.js $DEPLOYPATH/start.js
     - /bin/cp build/_app/immutable/entry/app.js $DEPLOYPATH/app.js 
