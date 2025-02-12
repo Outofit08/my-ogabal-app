@@ -110,4 +110,35 @@
 
 .info-item a:hover {
     color: var(--accent);
+}
+
+/* Add these styles to your existing CSS */
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.hero .tagline {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.certification {
+    margin-top: 2rem;
+}
+
+.badge {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.badge-text {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 } 
