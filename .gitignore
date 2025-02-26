@@ -1,15 +1,20 @@
 # WordPress core files
 wp-admin/
 wp-includes/
-wp-content/plugins/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/cache/
-wp-content/backup*/
+wp-content/*
+
+# Keep theme directory
+!wp-content/themes/
 wp-content/themes/*
 !wp-content/themes/ogabal-theme/
 
-# WordPress config files
+# WordPress dynamic content
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup*/
+
+# WordPress config
 wp-config.php
 wp-config-sample.php
 .htaccess
@@ -29,9 +34,14 @@ node_modules/
 *.zip
 *.tar.gz
 
-# But track these files
-!wp-content/themes/ogabal-theme/
+# Track all theme files
 !wp-content/themes/ogabal-theme/**/*
+!wp-content/themes/ogabal-theme/style.css
+!wp-content/themes/ogabal-theme/assets/
+!wp-content/themes/ogabal-theme/assets/css/
+!wp-content/themes/ogabal-theme/assets/css/custom.css
+
+# Always track these files
 !.cpanel.yml
 !README.md
 
