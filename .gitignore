@@ -3,10 +3,11 @@ wp-admin/
 wp-includes/
 wp-content/*
 
-# Keep theme directory
+# Keep theme directory and all its contents
 !wp-content/themes/
 wp-content/themes/*
 !wp-content/themes/ogabal-theme/
+!wp-content/themes/ogabal-theme/**/*
 
 # WordPress dynamic content
 wp-content/uploads/
@@ -33,13 +34,6 @@ node_modules/
 *.bak
 *.zip
 *.tar.gz
-
-# Track all theme files
-!wp-content/themes/ogabal-theme/**/*
-!wp-content/themes/ogabal-theme/style.css
-!wp-content/themes/ogabal-theme/assets/
-!wp-content/themes/ogabal-theme/assets/css/
-!wp-content/themes/ogabal-theme/assets/css/custom.css
 
 # Always track these files
 !.cpanel.yml
