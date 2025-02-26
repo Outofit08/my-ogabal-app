@@ -1,0 +1,126 @@
+/*
+Theme Name: OGABAL Limited
+Theme URI: https://ogabal.com
+Author: OGABAL Limited
+Author URI: https://ogabal.com
+Description: Custom WordPress theme for OGABAL Limited - Government Contract Solutions
+Version: 1.0
+License: GNU General Public License v2 or later
+Text Domain: ogabal
+*/
+
+/* Base styles - referencing custom.css */
+:root {
+    --primary: #ffffff;
+    --secondary: #f8f9fa;
+    --accent: #0056b3;
+    --text: #333333;
+    --text-muted: #6c757d;
+    --border: #dee2e6;
+}
+
+/* Global styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* Hero section - referencing front-page.php lines 3-10 */
+.hero {
+    background-color: var(--secondary);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+/* Navigation - referencing header.php lines 9-21 */
+nav {
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer - referencing footer.php lines 1-14 */
+footer {
+    background-color: var(--secondary);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+/* Import custom styles - referencing custom.css lines 1-113 */
+@import url('assets/css/custom.css');
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* Navigation */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Footer */
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-menu a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: var(--accent);
+} 

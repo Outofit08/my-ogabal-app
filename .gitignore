@@ -50,13 +50,3 @@ node_modules/
 .env.*
 !.env.example
 !.env.test
-
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
-
-# Built files in root
-/*.js
-/*.css
-/*.html
-!index.html
