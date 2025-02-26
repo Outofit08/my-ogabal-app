@@ -9,22 +9,29 @@ License: GNU General Public License v2 or later
 Text Domain: ogabal
 */
 
-/* Base styles - Dark theme with purple highlights */
+/* Base styles - Professional dark theme with refined accents */
 :root {
-    --primary: #121212;
-    --secondary: #1e1e1e;
-    --accent: #9c27b0;
-    --accent-light: #bb86fc;
-    --text: #f5f5f5;
-    --text-muted: #bbbbbb;
-    --border: #333333;
+    --primary: #0f1219;
+    --secondary: #1a202c;
+    --accent: #4361ee;
+    --accent-light: #4895ef;
+    --accent-dark: #3a0ca3;
+    --text: #f8f9fa;
+    --text-muted: #ced4da;
+    --border: #2d3748;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --card-bg: #1e293b;
+    --gradient-start: #4361ee;
+    --gradient-end: #3a0ca3;
 }
 
 /* Global styles - Force dark theme */
 html, body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text) !important;
     background-color: var(--primary) !important;
@@ -41,46 +48,223 @@ section {
     color: var(--text) !important;
 }
 
-/* Hero section with improved styling */
+/* Modern hero section with gradient overlay */
 .hero {
     background-color: var(--secondary) !important;
-    padding: 4rem 2rem;
+    background-image: linear-gradient(135deg, rgba(26, 32, 44, 0.95), rgba(15, 18, 25, 0.98)), url('assets/images/circuit-pattern.svg');
+    background-size: 300px 300px;
+    background-position: center;
+    padding: 6rem 2rem;
     text-align: center;
     border-bottom: 1px solid var(--border);
-    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Centered title with enhanced styling */
+/* Add subtle animated pattern to hero */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(67, 97, 238, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(67, 97, 238, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Professional title styling */
 .hero h1 {
     font-size: 3.5rem;
     margin: 0 auto 1rem auto;
-    color: var(--accent) !important;
+    color: var(--text) !important;
     text-align: center;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    max-width: 800px;
+}
+
+/* Accent span for company name */
+.hero h1 span {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero .tagline {
     font-size: 1.5rem;
     color: var(--text-muted) !important;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 400;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Badge styling for certifications */
+.certification {
+    margin-top: 2.5rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: rgba(26, 32, 44, 0.7);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.badge {
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 10px rgba(67, 97, 238, 0.3);
+}
+
+.badge-text {
+    margin-top: 0.7rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* Content area styling */
 .content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem 2rem;
     background-color: var(--primary) !important;
+}
+
+/* Company overview section */
+.company-overview {
+    background-color: var(--card-bg) !important;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-left: 4px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle tech pattern to cards */
+.company-overview::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-image: radial-gradient(var(--accent-light) 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.company-overview h2 {
+    color: var(--accent-light) !important;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-weight: 700;
+}
+
+.company-overview h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+}
+
+.overview-content {
+    color: var(--text) !important;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+.overview-content p {
+    margin-bottom: 1.5rem;
+}
+
+.overview-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Feature grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-light) !important;
 }
 
 /* Navigation */
 nav {
-    background-color: var(--primary) !important;
+    background-color: rgba(15, 18, 25, 0.95) !important;
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-content {
@@ -94,7 +278,7 @@ nav {
 /* Footer */
 footer {
     background-color: var(--secondary) !important;
-    padding: 2rem;
+    padding: 3rem 2rem;
     text-align: center;
     border-top: 1px solid var(--border);
 }
@@ -117,27 +301,62 @@ footer {
     color: var(--text) !important;
     text-decoration: none;
     font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    transition: width 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--accent-light) !important;
 }
 
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 .logo a {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent) !important;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     text-decoration: none;
 }
 
-/* Company overview section */
-.company-overview {
-    background-color: var(--secondary) !important;
-    padding: 2.5rem;
-    border-radius: 8px;
-    margin-bottom: 3rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-left: 4px solid var(--accent);
+/* About section */
+.about {
+    margin-top: 4rem;
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--accent-light) !important;
+    position: relative;
+    display: inline-block;
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
 }
 
 /* Make sure all headings have accent color */
@@ -156,38 +375,37 @@ main {
     color: var(--text) !important;
 }
 
-/* Footer */
-.footer-menu {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.footer-menu a {
-    color: var(--text);
-    text-decoration: none;
-}
-
-.footer-menu a:hover {
-    color: var(--accent-light);
-}
-
 /* Button styling */
 .button {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.6rem;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s;
+    padding: 0.8rem 1.6rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
 }
 
 .button:hover {
-    background-color: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .company-overview {
+        padding: 1.5rem;
+    }
 } 

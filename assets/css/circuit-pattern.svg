@@ -1,0 +1,48 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="circuit" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="#1a202c"/>
+      
+      <!-- Horizontal lines -->
+      <line x1="0" y1="25" x2="100" y2="25" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.15"/>
+      <line x1="0" y1="50" x2="100" y2="50" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.15"/>
+      <line x1="0" y1="75" x2="100" y2="75" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.15"/>
+      
+      <!-- Vertical lines -->
+      <line x1="25" y1="0" x2="25" y2="100" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.15"/>
+      <line x1="50" y1="0" x2="50" y2="100" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.15"/>
+      <line x1="75" y1="0" x2="75" y2="100" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.15"/>
+      
+      <!-- Dots at intersections -->
+      <circle cx="25" cy="25" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="25" cy="50" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="25" cy="75" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="50" cy="25" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="50" cy="50" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="50" cy="75" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="75" cy="25" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="75" cy="50" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      <circle cx="75" cy="75" r="2" fill="#4361ee" fill-opacity="0.2"/>
+      
+      <!-- Circuit elements -->
+      <path d="M25,25 L40,25 L40,40 L50,40" stroke="#4361ee" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      <path d="M75,25 L60,25 L60,15" stroke="#4361ee" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      <path d="M25,75 L35,75 L35,60 L50,60" stroke="#4361ee" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      <path d="M75,75 L65,75 L65,85" stroke="#4361ee" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      
+      <!-- Small circuit nodes -->
+      <circle cx="40" cy="40" r="1.5" fill="#4361ee" fill-opacity="0.4"/>
+      <circle cx="60" cy="15" r="1.5" fill="#4361ee" fill-opacity="0.4"/>
+      <circle cx="35" cy="60" r="1.5" fill="#4361ee" fill-opacity="0.4"/>
+      <circle cx="65" cy="85" r="1.5" fill="#4361ee" fill-opacity="0.4"/>
+      
+      <!-- Additional tech elements -->
+      <rect x="45" y="45" width="10" height="10" fill="#4361ee" fill-opacity="0.1" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.3"/>
+      <circle cx="10" cy="10" r="3" fill="none" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.2"/>
+      <circle cx="90" cy="90" r="3" fill="none" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.2"/>
+      <path d="M10,90 L15,85 L20,90 L25,85" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.2" fill="none"/>
+      <path d="M85,15 L90,10 L95,15" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.2" fill="none"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#circuit)"/>
+</svg>

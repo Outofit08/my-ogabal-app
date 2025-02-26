@@ -2,21 +2,20 @@
 
 <style>
     body, html, main, .content {
-        background-color: #121212 !important;
-        color: #f5f5f5 !important;
-    }
-    .hero h1 {
-        color: #9c27b0 !important;
-        text-align: center;
+        background-color: var(--primary) !important;
+        color: var(--text) !important;
     }
 </style>
 
 <div class="hero">
-    <h1>OGABAL Limited</h1>
-    <p class="tagline">Government Contract Solutions</p>
-    <div class="certification">
-        <span class="badge">SDVOSB</span>
-        <p class="badge-text">Service-Disabled Veteran-Owned Small Business</p>
+    <div class="hero-content">
+        <h1>Innovative <span>Software Solutions</span> for Government Agencies</h1>
+        <p class="tagline">OGABAL Limited delivers secure, scalable, and compliant technology solutions tailored for federal and defense requirements</p>
+        
+        <div class="certification">
+            <span class="badge">SDVOSB</span>
+            <p class="badge-text">Service-Disabled Veteran-Owned Small Business</p>
+        </div>
     </div>
 </div>
 
@@ -35,14 +34,42 @@
         </div>
     </section>
 
+    <section class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Security-First Approach</h3>
+            <p>Our solutions are built with security at their core, meeting rigorous federal compliance standards including NIST, FedRAMP, and CMMC requirements.</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Agile Development</h3>
+            <p>We employ modern agile methodologies tailored to government contracting, ensuring rapid delivery while maintaining quality and compliance.</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <h3>Custom Solutions</h3>
+            <p>From legacy system modernization to custom software development, we create purpose-built solutions that address unique government challenges.</p>
+        </div>
+    </section>
+
     <section class="about">
         <h2>About OGABAL</h2>
         <?php
         $about_page = get_page_by_path('about');
         if ($about_page) {
             echo apply_filters('the_content', $about_page->post_content);
+        } else {
+        ?>
+            <p>OGABAL Limited is a Service-Disabled Veteran-Owned Small Business (SDVOSB) dedicated to providing exceptional technology solutions for government agencies. Our team combines military experience with technical expertise to deliver secure, reliable, and innovative software that meets the unique needs of federal clients.</p>
+        <?php
         }
         ?>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="<?php echo home_url('/about'); ?>" class="button">Learn More About Us</a>
+        </div>
     </section>
 </div>
 

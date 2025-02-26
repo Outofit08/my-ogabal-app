@@ -15,6 +15,9 @@ function ogabal_scripts() {
     
     // Enqueue the custom CSS with dependency on the main stylesheet
     wp_enqueue_style('ogabal-custom', get_template_directory_uri() . '/assets/css/custom.css', array('ogabal-style'), '1.0.1');
+
+    // Add this inside your ogabal_scripts() function
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap', array(), null);
 }
 add_action('wp_enqueue_scripts', 'ogabal_scripts');
 
