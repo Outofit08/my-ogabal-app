@@ -1,5 +1,16 @@
 <?php get_header(); ?>
 
+<style>
+    body, html, main, .content {
+        background-color: #121212 !important;
+        color: #f5f5f5 !important;
+    }
+    .hero h1 {
+        color: #9c27b0 !important;
+        text-align: center;
+    }
+</style>
+
 <div class="hero">
     <h1>OGABAL Limited</h1>
     <p class="tagline">Government Contract Solutions</p>
