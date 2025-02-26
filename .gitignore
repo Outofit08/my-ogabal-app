@@ -1,4 +1,49 @@
-node_modules
+# WordPress core files
+wp-admin/
+wp-includes/
+wp-content/*
+
+# Keep theme directory
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/ogabal-theme/
+
+# WordPress dynamic content
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup*/
+
+# WordPress config
+wp-config.php
+wp-config-sample.php
+.htaccess
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+.env
+
+# Development files
+node_modules/
+.vscode/
+.idea/
+*.sql
+*.bak
+*.zip
+*.tar.gz
+
+# Track all theme files
+!wp-content/themes/ogabal-theme/**/*
+!wp-content/themes/ogabal-theme/style.css
+!wp-content/themes/ogabal-theme/assets/
+!wp-content/themes/ogabal-theme/assets/css/
+!wp-content/themes/ogabal-theme/assets/css/custom.css
+
+# Always track these files
+!.cpanel.yml
+!README.md
 
 # Output
 .output
@@ -7,12 +52,7 @@ node_modules
 /build
 /dist
 
-# OS
-.DS_Store
-Thumbs.db
-
 # Env
-.env
 .env.*
 !.env.example
 !.env.test
