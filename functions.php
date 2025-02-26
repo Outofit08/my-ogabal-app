@@ -77,4 +77,16 @@ function ogabal_admin_notice_plugins() {
         echo '</div>';
     }
 }
-add_action('admin_notices', 'ogabal_admin_notice_plugins'); 
+add_action('admin_notices', 'ogabal_admin_notice_plugins');
+
+// Force dark theme through wp_head
+function ogabal_force_dark_theme() {
+    echo '<style>
+        html, body, main, #page, #content, .site, .site-content, 
+        .entry-content, article, section {
+            background-color: #0f1219 !important;
+            color: #f8f9fa !important;
+        }
+    </style>';
+}
+add_action('wp_head', 'ogabal_force_dark_theme', 999); // Very high priority to override other styles 

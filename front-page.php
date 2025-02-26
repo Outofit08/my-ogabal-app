@@ -1,9 +1,21 @@
 <?php get_header(); ?>
 
 <style>
-    body, html, main, .content {
+    /* Extra-strength background enforcement */
+    html, body, #page, #content, main, .content, .entry-content, .site, .site-content,
+    .wp-site-blocks, article, section, div {
         background-color: var(--primary) !important;
         color: var(--text) !important;
+    }
+    
+    /* Make sure WordPress blocks don't override our styles */
+    .wp-block-group, .wp-block-cover, .wp-block-column {
+        background-color: var(--primary) !important;
+    }
+    
+    /* Ensure WordPress admin bar doesn't break our styling */
+    body.admin-bar {
+        background-color: var(--primary) !important;
     }
 </style>
 

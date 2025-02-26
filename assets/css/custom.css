@@ -1,11 +1,79 @@
 :root {
-  --primary: #121212;
-  --secondary: #1e1e1e;
-  --accent: #9c27b0;
-  --accent-light: #bb86fc;
-  --text: #f5f5f5;
-  --text-muted: #bbbbbb;
-  --border: #333333;
+  --primary: #0f1219;
+  --secondary: #1a202c;
+  --accent: #4361ee;
+  --accent-light: #4895ef;
+  --accent-dark: #3a0ca3;
+  --text: #f8f9fa;
+  --text-muted: #ced4da;
+  --border: #2d3748;
+  --card-bg: #1e293b;
+}
+
+/* Force dark background on all WordPress elements */
+html, body, #page, #content, #main, .site-content, .entry-content, .post, 
+.page, article, .wp-block-cover, .wp-block-group, .entry {
+    background-color: var(--primary) !important;
+    color: var(--text) !important;
+}
+
+/* Stronger styling for main content areas */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--primary) !important;
+}
+
+/* Feature grid and card styling */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background-color: var(--secondary) !important;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Updated button styling to match main theme */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
 }
 
 .hero {
@@ -13,12 +81,6 @@
   padding: 4rem 2rem;
   text-align: center;
   border-bottom: 1px solid var(--border);
-}
-
-.content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
 }
 
 /* Navigation styles */
@@ -64,20 +126,6 @@
 .error-404 {
   text-align: center;
   padding: 4rem 2rem;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background-color: var(--accent);
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: var(--accent-light);
 }
 
 .contact-grid {
