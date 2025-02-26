@@ -1,10 +1,11 @@
 :root {
-  --primary: #ffffff;
-  --secondary: #f8f9fa;
-  --accent: #0056b3;
-  --text: #333333;
-  --text-muted: #6c757d;
-  --border: #dee2e6;
+  --primary: #121212;
+  --secondary: #1e1e1e;
+  --accent: #9c27b0;
+  --accent-light: #bb86fc;
+  --text: #f5f5f5;
+  --text-muted: #bbbbbb;
+  --border: #333333;
 }
 
 .hero {
@@ -59,57 +60,77 @@
   text-align: center;
 }
 
-/* Add to existing CSS */
+/* Error page */
 .error-404 {
-    text-align: center;
-    padding: 4rem 2rem;
+  text-align: center;
+  padding: 4rem 2rem;
 }
 
 .button {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    background-color: var(--accent);
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #004494;
+  background-color: var(--accent-light);
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .contact-card {
-    background-color: var(--secondary);
-    padding: 2rem;
-    border-radius: 4px;
-    border: 1px solid var(--border);
+  background-color: var(--secondary);
+  padding: 2rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
 }
 
 .info-item {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .info-item h3 {
-    color: var(--accent);
-    margin-bottom: 0.5rem;
+  color: var(--accent-light);
+  margin-bottom: 0.5rem;
 }
 
 .info-item a {
-    color: var(--text);
-    text-decoration: none;
+  color: var(--text);
+  text-decoration: none;
 }
 
 .info-item a:hover {
-    color: var(--accent);
+  color: var(--accent-light);
+}
+
+/* Badge styles */
+.badge {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.badge-text {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-light);
 }
 
 /* Add these styles to your existing CSS */

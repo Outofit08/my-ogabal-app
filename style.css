@@ -3,20 +3,21 @@ Theme Name: OGABAL Limited
 Theme URI: https://ogabal.com
 Author: OGABAL Limited
 Author URI: https://ogabal.com
-Description: Custom WordPress theme for OGABAL Limited - Government Contract Solutions
+Description: OGABAL Limited is a modern and professional WordPress theme designed for government contracting and business services. Perfect for Service-Disabled Veteran-Owned Small Businesses (SDVOSB), consulting firms, and federal contractors. Features a clean, responsive design with custom post types for competencies and experiences. Fully compatible with Advanced Custom Fields and optimized for business websites. Built with accessibility and performance in mind.
 Version: 1.0
 License: GNU General Public License v2 or later
 Text Domain: ogabal
 */
 
-/* Base styles - referencing custom.css */
+/* Base styles - Dark theme with purple highlights */
 :root {
-    --primary: #ffffff;
-    --secondary: #f8f9fa;
-    --accent: #0056b3;
-    --text: #333333;
-    --text-muted: #6c757d;
-    --border: #dee2e6;
+    --primary: #121212;
+    --secondary: #1e1e1e;
+    --accent: #9c27b0;
+    --accent-light: #bb86fc;
+    --text: #f5f5f5;
+    --text-muted: #bbbbbb;
+    --border: #333333;
 }
 
 /* Global styles */
@@ -25,9 +26,10 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text);
+    background-color: var(--primary);
 }
 
-/* Hero section - referencing front-page.php lines 3-10 */
+/* Hero section */
 .hero {
     background-color: var(--secondary);
     padding: 4rem 2rem;
@@ -38,10 +40,10 @@ body {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: var(--accent);
+    color: var(--accent-light);
 }
 
-/* Navigation - referencing header.php lines 9-21 */
+/* Navigation */
 nav {
     background-color: var(--primary);
     border-bottom: 1px solid var(--border);
@@ -56,7 +58,7 @@ nav {
     align-items: center;
 }
 
-/* Footer - referencing footer.php lines 1-14 */
+/* Footer */
 footer {
     background-color: var(--secondary);
     padding: 2rem;
@@ -64,16 +66,8 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-/* Import custom styles - referencing custom.css lines 1-113 */
+/* Import custom styles */
 @import url('assets/css/custom.css');
-
-/* Base styles */
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-}
 
 /* Navigation */
 .nav-links {
@@ -96,7 +90,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: var(--accent-light);
 }
 
 .logo a {
@@ -122,5 +116,22 @@ body {
 }
 
 .footer-menu a:hover {
-    color: var(--accent);
+    color: var(--accent-light);
+}
+
+/* Button styling */
+.button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--accent-light);
 } 
