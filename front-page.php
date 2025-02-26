@@ -10,6 +10,20 @@
 </div>
 
 <div class="content">
+    <section class="company-overview">
+        <h2>Technology Solutions for Government</h2>
+        <div class="overview-content">
+            <p>OGABAL stands at the forefront of delivering innovative technology solutions 
+            tailored to the evolving needs of the DoD and other government agencies. With a 
+            focus on efficiency, security, and scalability, we leverage cutting-edge technologies 
+            and a robust understanding of mission-critical operations to empower clients to 
+            achieve their objectives.</p>
+            
+            <p>Founded by a Navy veteran and experienced software engineer, OGABAL combines technical expertise with a commitment to excellence 
+            and service.</p>
+        </div>
+    </section>
+
     <section class="about">
         <h2>About OGABAL</h2>
         <?php
