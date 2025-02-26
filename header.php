@@ -6,6 +6,21 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<script>
+    // Immediate execution JS to ensure dark background
+    document.documentElement.style.backgroundColor = '#0f1219';
+    document.body.style.backgroundColor = '#0f1219';
+    
+    // Run again after everything has loaded
+    window.addEventListener('load', function() {
+        document.documentElement.style.backgroundColor = '#0f1219';
+        document.body.style.backgroundColor = '#0f1219';
+        
+        // Force all divs
+        document.querySelectorAll('div, section, article, main, #page, #content')
+            .forEach(el => el.style.backgroundColor = '#0f1219');
+    });
+</script>
 <nav>
     <div class="nav-content">
         <div class="logo">

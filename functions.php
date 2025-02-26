@@ -90,3 +90,28 @@ function ogabal_force_dark_theme() {
     </style>';
 }
 add_action('wp_head', 'ogabal_force_dark_theme', 999); // Very high priority to override other styles 
+
+// Add background-enforcing body class 
+function ogabal_body_classes($classes) {
+    $classes[] = 'dark-theme-enforced';
+    return $classes;
+}
+add_filter('body_class', 'ogabal_body_classes'); 
+
+// Emergency background fix with absolute highest priority
+function ogabal_background_fix() {
+    wp_enqueue_style('ogabal-bg-fix', get_template_directory_uri() . '/background-fix.css', array(), '1.0.0');
+}
+add_action('wp_enqueue_scripts', 'ogabal_background_fix', 999);
+
+// Inline critical CSS to fix background before any other styles load
+function ogabal_critical_css() {
+    echo '<style>
+        html, body, #page, #content, main, .content, article, section, div,
+        .site, .site-content, .site-main, .entry-content {
+            background-color: #0f1219 !important;
+            color: #f8f9fa !important;
+        }
+    </style>';
+}
+add_action('wp_head', 'ogabal_critical_css', 0); // First priority 
