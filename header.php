@@ -32,11 +32,18 @@
             });
     });
 </script>
+
+<div class="logo-container">
+    <div class="centered-logo">
+        <a href="<?php echo home_url(); ?>">
+            <span class="logo-text">OGABAL</span>
+            <span class="logo-tagline">Service-Disabled Veteran-Owned Small Business</span>
+        </a>
+    </div>
+</div>
+
 <nav>
     <div class="nav-content">
-        <div class="logo">
-            <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-        </div>
         <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary',

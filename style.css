@@ -428,4 +428,149 @@ html, body, #wpadminbar, #page, #content, .site, .site-content, .entry-content,
 .wp-container-1, .wp-container-2, .wp-container-3, .wp-container-4, .wp-container-5,
 .wp-container-6, .wp-container-7, .wp-container-8, .wp-container-9, .wp-container-10 {
     background-color: var(--primary) !important;
+}
+
+/* Enhanced Logo Styling */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+    background-color: var(--secondary) !important;
+    border-bottom: 1px solid var(--border);
+}
+
+.centered-logo {
+    text-align: center;
+}
+
+.centered-logo a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.logo-tagline {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Enhanced Title Areas with Borders */
+h1, h2, h3 {
+    position: relative;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+h1::after, h2::after, h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border-radius: 3px;
+}
+
+/* Center-aligned headings for certain sections */
+.hero h1, .section-title {
+    text-align: center;
+}
+
+.hero h1::after, .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+}
+
+/* Enhanced Hero Section */
+.hero {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    padding: 3rem 2rem;
+}
+
+/* Enhanced certification badge */
+.certification {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(67, 97, 238, 0.1);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    margin-top: 2rem;
+}
+
+.badge {
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-right: 1rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(67, 97, 238, 0.2);
+    border-radius: 4px;
+}
+
+.badge-text {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Navigation enhancements */
+nav {
+    background-color: var(--secondary) !important;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--text) !important;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+    position: relative;
 } 

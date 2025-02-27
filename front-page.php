@@ -37,6 +37,25 @@ echo '<!-- Using front-page.php template -->';
 </div>
 
 <div class="content">
+    <h2 class="section-title">Our Services</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Cybersecurity Solutions</h3>
+            <p>CMMC-compliant security systems designed specifically for government contractors and agencies.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🖥️</div>
+            <h3>Custom Software Development</h3>
+            <p>Tailored applications built to meet the unique requirements of federal and defense operations.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Data Analytics</h3>
+            <p>Advanced analytics solutions that transform government data into actionable intelligence.</p>
+        </div>
+    </div>
+
     <section class="company-overview">
         <h2>Technology Solutions for Government</h2>
         <div class="overview-content">
