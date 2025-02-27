@@ -171,3 +171,10 @@ function ogabal_debug_template() {
     echo '<!-- Current template: ' . basename($template) . ' -->';
 }
 add_action('wp_head', 'ogabal_debug_template', 1); 
+
+// Ensure the main stylesheet is properly enqueued
+function ogabal_enqueue_styles() {
+    wp_enqueue_style('ogabal-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_style('ogabal-custom', get_template_directory_uri() . '/assets/css/custom.css', array('ogabal-style'), '1.0.0');
+}
+add_action('wp_enqueue_scripts', 'ogabal_enqueue_styles'); 
