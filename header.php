@@ -433,6 +433,25 @@
 </nav>
 <main>
 <div class="gif-container">
-    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/example.gif'); ?>" alt="Example GIF" class="gif-image" />
+    <div class="gif-close">×</div>
+    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/teamwork.gif'); ?>" alt="Team Collaboration" class="gif-image" />
 </div>
-</main> 
+</main>
+
+<script>
+    // Simple script to make the close button work
+    document.addEventListener('DOMContentLoaded', function() {
+        const closeButton = document.querySelector('.gif-close');
+        const gifContainer = document.querySelector('.gif-container');
+        
+        if (closeButton && gifContainer) {
+            closeButton.addEventListener('click', function() {
+                gifContainer.style.display = 'none';
+            });
+        }
+    });
+</script>
+
+<?php wp_footer(); ?>
+</body>
+</html> 
