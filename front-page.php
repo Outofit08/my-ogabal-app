@@ -1,9 +1,7 @@
 <?php
-// Debug which template is being used
-echo '<!-- Using front-page.php template -->';
+// No output here - just PHP
+get_header();
 ?>
-
-<?php get_header(); ?>
 
 <style>
     /* Extra-strength background enforcement with direct color values */

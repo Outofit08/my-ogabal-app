@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+// Ensure no output before DOCTYPE
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -6,6 +8,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <script>
     // Immediate execution JS to ensure dark background
     document.documentElement.style.backgroundColor = '#0f1219';
