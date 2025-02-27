@@ -98,11 +98,50 @@ function ogabal_body_classes($classes) {
 }
 add_filter('body_class', 'ogabal_body_classes'); 
 
-// Emergency background fix with absolute highest priority
+// Instead, use only inline CSS for the background fix
 function ogabal_background_fix() {
-    wp_enqueue_style('ogabal-bg-fix', get_template_directory_uri() . '/background-fix.css', array(), '1.0.0');
+    // Register the main stylesheet first if not already done
+    if (!wp_style_is('ogabal-style', 'registered')) {
+        wp_register_style('ogabal-style', get_stylesheet_uri());
+    }
+    
+    $background_css = "
+    /* CRITICAL BACKGROUND FIX - DO NOT MODIFY */
+    html, body, 
+    #page, #content, main, .content, article, section, div,
+    .site, .site-content, .site-main, .entry-content, 
+    .wp-block-cover, .wp-block-group, .wp-block-column,
+    .entry, .post, .page, .wp-site-blocks, 
+    header, footer, aside, .sidebar, .widget,
+    .wp-block-template-part, .wp-block-template,
+    .is-root-container, .editor-styles-wrapper {
+        background-color: #0f1219 !important;
+    }
+    
+    body * {
+        background-color: transparent;
+    }
+    
+    .hero, .company-overview, .feature-card, 
+    .founder-card, .contact-card, .service-card, 
+    .footer, .nav-primary, header.site-header {
+        background-color: #1a202c !important;
+    }
+    
+    /* Counter any animation or transition that might reset background */
+    @keyframes preventWhiteBackground {
+        from { background-color: #0f1219 !important; }
+        to { background-color: #0f1219 !important; }
+    }
+    
+    html, body {
+        animation: preventWhiteBackground 1ms linear infinite;
+    }";
+    
+    // Add the CSS inline to the main stylesheet
+    wp_add_inline_style('ogabal-style', $background_css);
 }
-add_action('wp_enqueue_scripts', 'ogabal_background_fix', 999);
+add_action('wp_enqueue_scripts', 'ogabal_background_fix', 20);
 
 // Inline critical CSS to fix background before any other styles load
 function ogabal_critical_css() {
@@ -174,10 +213,26 @@ add_action('wp_head', 'ogabal_debug_template', 1);
 
 // Ensure the main stylesheet is properly enqueued
 function ogabal_enqueue_styles() {
-    wp_enqueue_style('ogabal-style', get_stylesheet_uri(), array(), '1.0.0');
-    wp_enqueue_style('ogabal-custom', get_template_directory_uri() . '/assets/css/custom.css', array('ogabal-style'), '1.0.0');
+    // Use get_stylesheet_directory_uri() instead of get_template_directory_uri() for child themes
+    wp_enqueue_style('ogabal-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0.2');
+    
+    // Enqueue custom.css separately
+    wp_enqueue_style('ogabal-custom', get_stylesheet_directory_uri() . '/assets/css/custom.css', array('ogabal-style'), '1.0.2');
+    
+    // Add inline styles instead of relying on the CSS file
+    $inline_css = "
+    html, body, #page, #content, main, .content, article, section, div,
+    .site, .site-content, .site-main, .entry-content {
+        background-color: #0f1219 !important;
+        color: #f8f9fa !important;
+    }";
+    
+    wp_add_inline_style('ogabal-style', $inline_css);
 }
-add_action('wp_enqueue_scripts', 'ogabal_enqueue_styles'); 
+add_action('wp_enqueue_scripts', 'ogabal_enqueue_styles', 10);
+
+// Remove any other functions that might be trying to enqueue style.css
+remove_action('wp_enqueue_scripts', 'ogabal_background_fix', 20);
 
 // Add a direct CSS injection as a fallback
 function ogabal_direct_css_injection() {

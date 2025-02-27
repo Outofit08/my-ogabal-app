@@ -3,8 +3,8 @@ Theme Name: OGABAL Limited
 Theme URI: https://ogabal.com
 Author: OGABAL Limited
 Author URI: https://ogabal.com
-Description: OGABAL Limited is a modern and professional WordPress theme designed for government contracting and business services. Perfect for Service-Disabled Veteran-Owned Small Businesses (SDVOSB), consulting firms, and federal contractors. Features a clean, responsive design with custom post types for competencies and experiences. Fully compatible with Advanced Custom Fields and optimized for business websites. Built with accessibility and performance in mind.
-Version: 1.0
+Description: OGABAL Limited is a modern and professional WordPress theme.
+Version: 1.0.1
 License: GNU General Public License v2 or later
 Text Domain: ogabal
 */
@@ -31,7 +31,7 @@ Text Domain: ogabal
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text) !important;
     background-color: var(--primary) !important;

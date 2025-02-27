@@ -5,6 +5,54 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Direct CSS link to bypass WordPress -->
+    <style>
+        /* Critical styles */
+        html, body, #page, #content, main, .content, article, section, div,
+        .site, .site-content, .site-main, .entry-content {
+            background-color: #0f1219 !important;
+            color: #f8f9fa !important;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Logo styling */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            margin-bottom: 1rem;
+            background-color: #1a202c !important;
+            border-bottom: 1px solid #2d3748;
+        }
+        
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #4361ee, #4895ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: #ced4da;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+    
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
