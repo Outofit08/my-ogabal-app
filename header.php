@@ -431,11 +431,13 @@
         ?>
     </div>
 </nav>
-<main>
+
 <div class="gif-container">
     <div class="gif-close">×</div>
     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/teamwork.gif'); ?>" alt="Team Collaboration" class="gif-image" />
 </div>
+
+<main>
 </main>
 
 <script>

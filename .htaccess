@@ -1,50 +1,25 @@
-# Enable CORS and Security Headers
+# Security Headers
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
-    Header set Access-Control-Allow-Origin "*"
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# Handle SvelteKit SPA routing
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    
-    # If the request is not for a valid file or directory
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^ index.html [L]
-</IfModule>
-
-# Force correct MIME types for specific files
-<FilesMatch "\.css$">
-    ForceType text/css
-    Header set Content-Type text/css
-</FilesMatch>
-
-<FilesMatch "\.js$">
-    ForceType application/javascript
-    Header set Content-Type application/javascript
-    Header set Content-Type "text/javascript; charset=UTF-8"
-</FilesMatch>
-
-<FilesMatch "\.(js|mjs)$">
-    AddType application/javascript .js
-    AddType application/javascript .mjs
-    Header set Content-Type application/javascript
-</FilesMatch>
+# Prevent directory listing
+Options -Indexes
 
 # Set correct MIME types
-AddType text/css .css
-AddType application/javascript .js .mjs
-AddType application/json .json
-AddType text/html .html
-AddType image/svg+xml .svg
-AddType image/png .png
-AddType image/jpeg .jpg .jpeg
-AddType image/gif .gif
+<IfModule mod_mime.c>
+    AddType text/css .css
+    AddType application/javascript .js .mjs
+    AddType application/json .json
+    AddType text/html .html .htm
+    AddType image/svg+xml .svg
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/gif .gif
+</IfModule>
 
 # Cache static assets
 <IfModule mod_expires.c>
@@ -56,32 +31,19 @@ AddType image/gif .gif
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
-
-# Prevent directory listing
-Options -Indexes 
-
-<Directory "/home2/fedwrqmy/public_html/_app/immutable/assets">
-    <FilesMatch "\.css$">
-        ForceType text/css
-        Header set Content-Type text/css
-    </FilesMatch>
-</Directory>
-
-<Directory "/home2/fedwrqmy/public_html/_app/immutable/entry">
-    <FilesMatch "\.js$">
-        ForceType application/javascript
-        Header set Content-Type application/javascript
-    </FilesMatch>
-</Directory>
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
+
+# Allow direct access to assets folder
+RewriteCond %{REQUEST_URI} !^/wp-content/themes/ogabal-theme/assets/.*$
+RewriteCond %{REQUEST_URI} !^/assets/.*$
+
+# Don't rewrite for existing files or directories
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
