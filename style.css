@@ -11,18 +11,18 @@ Text Domain: ogabal
 
 /* Base styles - Professional dark theme with refined accents */
 :root {
-    --primary: #0f1219;
-    --secondary: #1a202c;
+    --primary: #1e1e24;
+    --secondary: #2d2d35;
     --accent: #4361ee;
     --accent-light: #4895ef;
     --accent-dark: #3a0ca3;
     --text: #f8f9fa;
     --text-muted: #ced4da;
-    --border: #2d3748;
+    --border: #3f3f4a;
     --success: #2ecc71;
     --warning: #f39c12;
     --danger: #e74c3c;
-    --card-bg: #1e293b;
+    --card-bg: #2d2d35;
     --gradient-start: #4361ee;
     --gradient-end: #3a0ca3;
 }
@@ -708,38 +708,49 @@ section {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 150px; /* Adjust the size as needed */
+    width: 180px; /* Slightly larger */
     height: auto;
-    z-index: 1000; /* Ensure it is on top of other elements */
-    border-radius: 10px;
+    z-index: 1000;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     border: 1px solid var(--border);
-    background-color: var(--card-bg);
-    padding: 8px;
+    background: linear-gradient(145deg, var(--secondary), var(--primary));
+    padding: 0;
     transition: all 0.3s ease;
 }
 
 .gif-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(67, 97, 238, 0.3);
+    border-color: var(--accent);
+}
+
+.gif-title {
+    background-color: rgba(45, 45, 53, 0.9);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border);
 }
 
 .gif-image {
     width: 100%;
     height: auto;
-    border-radius: 6px;
     display: block;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
 }
 
-/* Add close button for the GIF container */
 .gif-close {
     position: absolute;
     top: 5px;
     right: 5px;
     width: 20px;
     height: 20px;
-    background-color: rgba(15, 18, 25, 0.7);
+    background-color: rgba(45, 45, 53, 0.8);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -748,8 +759,228 @@ section {
     font-size: 12px;
     color: var(--text);
     z-index: 1001;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .gif-close:hover {
     background-color: var(--danger);
+}
+
+/* Service Pages Styling */
+.page-content {
+    background-color: var(--secondary) !important;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--accent-light) !important;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border-radius: 3px;
+}
+
+.page-featured-image {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+}
+
+.page-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.page-text-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.page-text-content p {
+    margin-bottom: 1.5rem;
+}
+
+.page-text-content h2 {
+    color: var(--accent-light);
+    margin: 2.5rem 0 1.5rem;
+    font-size: 1.8rem;
+}
+
+.page-text-content h3 {
+    color: var(--accent-light);
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.page-text-content ul, 
+.page-text-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.page-text-content li {
+    margin-bottom: 0.75rem;
+}
+
+.service-cta {
+    background: linear-gradient(145deg, var(--secondary), var(--card-bg));
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+}
+
+.service-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-light);
+}
+
+.service-cta p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.service-cta .button {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+}
+
+.service-cta .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+}
+
+/* Service Page Template Styling */
+.service-page {
+    background-color: var(--secondary) !important;
+    padding: 3rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+}
+
+.service-highlight {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--accent-light);
+    font-weight: 500;
+    border-left: 4px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    background-color: rgba(67, 97, 238, 0.05);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.service-features {
+    margin: 3rem 0;
+}
+
+.service-features h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.service-features h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border-radius: 3px;
+}
+
+.service-intro {
+    margin-bottom: 2rem;
+}
+
+.related-services {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+}
+
+.related-services h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.related-services h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border-radius: 3px;
+}
+
+.related-services .feature-card {
+    text-align: center;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-services .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent);
+}
+
+.related-services .button {
+    margin-top: 1rem;
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s;
 } 
