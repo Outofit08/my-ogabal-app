@@ -573,4 +573,133 @@ nav {
     padding: 0.5rem 0;
     transition: color 0.3s;
     position: relative;
+}
+
+/* Center the entire page content */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Make logo container full width */
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+    background-color: var(--secondary) !important;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Make navigation full width */
+nav {
+    width: 100%;
+    background-color: var(--secondary) !important;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+/* Enhanced Section Titles with Borders */
+h1, h2, h3, .section-title {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h1::after, h2::after, h3::after, .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border-radius: 3px;
+}
+
+/* Add decorative elements to section titles */
+h2::before, h3::before, .section-title::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Add border around section containers */
+section {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    background-color: var(--secondary) !important;
+}
+
+/* Hero section should be full width within the container */
+.hero {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3rem;
+    background-color: var(--secondary) !important;
+}
+
+/* Ensure feature cards have consistent height */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg) !important;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main, .content {
+        padding: 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
 } 
