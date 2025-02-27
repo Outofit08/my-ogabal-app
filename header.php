@@ -16,9 +16,20 @@
         document.documentElement.style.backgroundColor = '#0f1219';
         document.body.style.backgroundColor = '#0f1219';
         
-        // Force all divs
-        document.querySelectorAll('div, section, article, main, #page, #content')
-            .forEach(el => el.style.backgroundColor = '#0f1219');
+        // Force all elements - more comprehensive selector
+        document.querySelectorAll('body, body > *, div, section, article, main, #page, #content, .site, .site-content, .entry-content, .wp-site-blocks')
+            .forEach(function(el) {
+                el.style.backgroundColor = '#0f1219';
+                // Log elements with non-dark backgrounds after our fix
+                setTimeout(function() {
+                    const style = window.getComputedStyle(el);
+                    if (style.backgroundColor !== 'rgb(15, 18, 25)' && 
+                        style.backgroundColor !== 'rgba(15, 18, 25, 1)' &&
+                        style.backgroundColor !== 'transparent') {
+                        console.log('Element with non-dark background:', el, style.backgroundColor);
+                    }
+                }, 500);
+            });
     });
 </script>
 <nav>

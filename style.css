@@ -408,4 +408,24 @@ main {
     .company-overview {
         padding: 1.5rem;
     }
+}
+
+/* Extra strong background enforcement */
+html, body, #wpadminbar, #page, #content, .site, .site-content, .entry-content, 
+.wp-site-blocks, .wp-block-template-part, .wp-block-group, .wp-block-cover, 
+.entry, .post, .page, article, section, div, main, header, footer, aside, 
+.sidebar, .widget, .home, .blog, #wrapper, #container, #main-content, .site-wrapper {
+    background-color: var(--primary) !important;
+    color: var(--text) !important;
+}
+
+/* Force WordPress Twenty Twenty-Three theme elements */
+.wp-site-blocks, .wp-site-blocks > *, .is-layout-flow, .is-layout-constrained {
+    background-color: var(--primary) !important;
+}
+
+/* Force WordPress Twenty Twenty-Two theme elements */
+.wp-container-1, .wp-container-2, .wp-container-3, .wp-container-4, .wp-container-5,
+.wp-container-6, .wp-container-7, .wp-container-8, .wp-container-9, .wp-container-10 {
+    background-color: var(--primary) !important;
 } 

@@ -16,6 +16,14 @@
   ?>
 </footer>
 
+<script>
+    // Final check to ensure dark background
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.backgroundColor = '#0f1219';
+        document.documentElement.style.backgroundColor = '#0f1219';
+    });
+</script>
+
 <?php wp_footer(); ?>
 </body>
 </html> 

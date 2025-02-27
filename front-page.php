@@ -1,3 +1,8 @@
+<?php
+// Debug which template is being used
+echo '<!-- Using front-page.php template -->';
+?>
+
 <?php get_header(); ?>
 
 <style>
