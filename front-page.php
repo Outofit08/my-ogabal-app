@@ -6,21 +6,21 @@ echo '<!-- Using front-page.php template -->';
 <?php get_header(); ?>
 
 <style>
-    /* Extra-strength background enforcement */
+    /* Extra-strength background enforcement with direct color values */
     html, body, #page, #content, main, .content, .entry-content, .site, .site-content,
     .wp-site-blocks, article, section, div {
-        background-color: var(--primary) !important;
-        color: var(--text) !important;
+        background-color: #0f1219 !important;
+        color: #f8f9fa !important;
     }
     
     /* Make sure WordPress blocks don't override our styles */
     .wp-block-group, .wp-block-cover, .wp-block-column {
-        background-color: var(--primary) !important;
+        background-color: #0f1219 !important;
     }
     
     /* Ensure WordPress admin bar doesn't break our styling */
     body.admin-bar {
-        background-color: var(--primary) !important;
+        background-color: #0f1219 !important;
     }
 </style>
 
