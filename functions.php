@@ -178,3 +178,19 @@ function ogabal_enqueue_styles() {
     wp_enqueue_style('ogabal-custom', get_template_directory_uri() . '/assets/css/custom.css', array('ogabal-style'), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'ogabal_enqueue_styles'); 
+
+// Add a direct CSS injection as a fallback
+function ogabal_direct_css_injection() {
+    echo '<style id="ogabal-direct-css">
+    /* CRITICAL DIRECT CSS INJECTION */
+    html, body, #page, #content, main, .content, article, section, div,
+    .site, .site-content, .site-main, .entry-content, 
+    .wp-block-cover, .wp-block-group, .wp-block-column,
+    .entry, .post, .page, .wp-site-blocks, 
+    header, footer, aside, .sidebar, .widget {
+        background-color: #0f1219 !important;
+        color: #f8f9fa !important;
+    }
+    </style>';
+}
+add_action('wp_head', 'ogabal_direct_css_injection', 1); 
