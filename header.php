@@ -431,4 +431,8 @@
         ?>
     </div>
 </nav>
-<main> 
+<main>
+<div class="gif-container">
+    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/example.gif'); ?>" alt="Example GIF" class="gif-image" />
+</div>
+</main> 
