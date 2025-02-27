@@ -148,8 +148,8 @@ function ogabal_add_stronger_css() {
         .wp-site-blocks, .wp-block-template-part, .wp-block-group, .wp-block-cover, 
         .entry, .post, .page, article, section, div, main, header, footer, aside, 
         .sidebar, .widget, .home, .blog {
-            background-color: var(--primary) !important;
-            color: var(--text) !important;
+            background-color: #0f1219 !important;
+            color: #f8f9fa !important;
         }
         
         /* Target Twenty Twenty-Three theme specifically */
