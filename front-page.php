@@ -56,6 +56,41 @@ get_header();
     p {
         margin-bottom: 0.75rem !important;
     }
+    
+    /* Cybersecurity card with background image */
+    .cybersecurity-card {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .cybersecurity-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/cybersecurity.webp'); ?>');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: -1;
+        filter: brightness(0.7) contrast(1.1);
+    }
+    
+    .cybersecurity-card .feature-icon,
+    .cybersecurity-card h3,
+    .cybersecurity-card p {
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .cybersecurity-card::after {
+        background: linear-gradient(90deg, #4361ee, #3a0ca3) !important;
+        opacity: 1;
+    }
 </style>
 
 <div class="hero">
@@ -73,7 +108,7 @@ get_header();
 <div class="content">
     <h2 class="section-title">Our Services</h2>
     <div class="feature-grid">
-        <div class="feature-card">
+        <div class="feature-card cybersecurity-card">
             <div class="feature-icon">🔒</div>
             <h3>Cybersecurity Solutions</h3>
             <p>CMMC-compliant security systems designed specifically for government contractors and agencies.</p>
