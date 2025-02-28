@@ -41,7 +41,7 @@ get_header();
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
-        opacity: 0.2;
+        opacity: 0.4;
         z-index: -1;
     }
     
@@ -53,7 +53,7 @@ get_header();
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(15, 18, 25, 0.85), rgba(15, 18, 25, 0.75));
+        background: linear-gradient(to bottom, rgba(15, 18, 25, 0.6), rgba(15, 18, 25, 0.5));
         z-index: -1;
     }
     
@@ -86,7 +86,7 @@ get_header();
     section {
         padding: 1.25rem !important;
         margin-bottom: 1.5rem !important;
-        background-color: rgba(45, 45, 53, 0.7) !important;
+        background-color: rgba(45, 45, 53, 0.6) !important;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
     }
@@ -101,7 +101,7 @@ get_header();
     
     /* Give cards semi-transparent background for better visibility against the page background */
     .feature-card {
-        background-color: rgba(30, 41, 59, 0.8) !important;
+        background-color: rgba(30, 41, 59, 0.7) !important;
         position: relative;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -151,7 +151,7 @@ get_header();
     
     /* Make GIF container semi-transparent */
     .gif-container {
-        background-color: rgba(30, 41, 59, 0.8) !important;
+        background-color: rgba(30, 41, 59, 0.7) !important;
         border-radius: 8px;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
