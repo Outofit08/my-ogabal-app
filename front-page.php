@@ -41,12 +41,12 @@ get_header();
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
-        opacity: 0.4;
+        opacity: 0.5;
         z-index: -1;
     }
     
-    /* Add dark overlay to ensure text readability */
-    .full-page-background::after {
+    /* Removed dark overlay to let background image show through more clearly */
+    /* .full-page-background::after {
         content: '';
         position: absolute;
         top: 0;
@@ -55,7 +55,7 @@ get_header();
         height: 100%;
         background: linear-gradient(to bottom, rgba(15, 18, 25, 0.6), rgba(15, 18, 25, 0.5));
         z-index: -1;
-    }
+    } */
     
     /* Compact layout styles */
     .hero {
@@ -68,6 +68,7 @@ get_header();
     .hero h2 {
         font-size: 2.5rem !important;
         margin-bottom: 0.75rem !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     .tagline {
@@ -77,6 +78,7 @@ get_header();
     .section-title {
         margin-top: 0 !important;
         margin-bottom: 1rem !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     .feature-grid {
@@ -86,9 +88,10 @@ get_header();
     section {
         padding: 1.25rem !important;
         margin-bottom: 1.5rem !important;
-        background-color: rgba(45, 45, 53, 0.6) !important;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        background-color: rgba(30, 41, 59, 0.75) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     
     .company-overview h2 {
@@ -99,12 +102,21 @@ get_header();
         margin-bottom: 0.75rem !important;
     }
     
-    /* Give cards semi-transparent background for better visibility against the page background */
+    /* Enhance text readability with text shadows */
+    .hero h2, 
+    .section-title,
+    .content h3,
+    .content p {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Give cards slightly darker backgrounds for better text contrast */
     .feature-card {
-        background-color: rgba(30, 41, 59, 0.7) !important;
+        background-color: rgba(30, 41, 59, 0.8) !important;
         position: relative;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
     
     /* Cybersecurity card with background image */
