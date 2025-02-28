@@ -114,7 +114,7 @@
             color: var(--text-muted) !important;
         }
 
-        /* Logo styling */
+        /* Logo styling with warfighter drone background */
         .logo-container {
             width: 100%;
             display: flex;
@@ -124,10 +124,42 @@
             margin-bottom: 0.5rem;
             background-color: var(--secondary) !important;
             border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Add warfighter drone background */
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/warfighterDrone.webp'); ?>');
+            background-size: cover;
+            background-position: center center;
+            opacity: 0.15;
+            z-index: 0;
+            filter: brightness(0.6) contrast(1.1);
+        }
+        
+        /* Add dark overlay to ensure text readability */
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(26, 32, 44, 0.85), rgba(15, 18, 25, 0.9));
+            z-index: 1;
         }
 
         .centered-logo {
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         .centered-logo a {
@@ -390,6 +422,7 @@
             font-size: 1.8rem;
             margin-bottom: 0.1rem;
             letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .header-acronym .acronym-explanation {
@@ -398,6 +431,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.2;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         .header-acronym .acronym-explanation::after {
