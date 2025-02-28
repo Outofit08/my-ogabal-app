@@ -24,7 +24,11 @@ get_header();
 
 <div class="hero">
     <div class="hero-content">
-        <h1>Innovative <span>Software Solutions</span> for Government Agencies</h1>
+        <div class="acronym-container">
+            <h1 class="acronym-title">OGABAL</h1>
+            <p class="acronym-explanation">OFFICIAL GOVERNMENT ASSISTANCE FOR BUSINESSES AND APPLICATION LOGISTICS</p>
+        </div>
+        <h2>Innovative <span>Software Solutions</span> for Government Agencies</h2>
         <p class="tagline">OGABAL Limited delivers secure, scalable, and compliant technology solutions tailored for federal and defense requirements</p>
         
         <div class="certification">

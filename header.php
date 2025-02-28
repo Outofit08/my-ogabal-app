@@ -417,7 +417,6 @@
     <div class="centered-logo">
         <a href="<?php echo home_url(); ?>">
             <span class="logo-text">OGABAL</span>
-            <span class="logo-tagline">Service-Disabled Veteran-Owned Small Business</span>
         </a>
     </div>
 </div>
