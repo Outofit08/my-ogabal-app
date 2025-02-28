@@ -385,6 +385,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div class="bg-pattern"></div>
 <script>
     // Immediate execution JS to ensure dark background
     document.documentElement.style.backgroundColor = '#0f1219';
@@ -432,28 +433,8 @@
     </div>
 </nav>
 
-<div class="gif-container">
-    <div class="gif-title">Team Collaboration</div>
-    <div class="gif-close">×</div>
-    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/teamwork.gif'); ?>" alt="Team Collaboration" class="gif-image" />
-</div>
-
 <main>
 </main>
-
-<script>
-    // Simple script to make the close button work
-    document.addEventListener('DOMContentLoaded', function() {
-        const closeButton = document.querySelector('.gif-close');
-        const gifContainer = document.querySelector('.gif-container');
-        
-        if (closeButton && gifContainer) {
-            closeButton.addEventListener('click', function() {
-                gifContainer.style.display = 'none';
-            });
-        }
-    });
-</script>
 
 <?php wp_footer(); ?>
 </body>
