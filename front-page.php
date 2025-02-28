@@ -20,14 +20,46 @@ get_header();
     body.admin-bar {
         background-color: #0f1219 !important;
     }
+    
+    /* Compact layout styles */
+    .hero {
+        padding: 2.5rem 2rem !important;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .tagline {
+        margin-bottom: 1rem !important;
+    }
+    
+    .section-title {
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .feature-grid {
+        margin: 1.5rem 0 !important;
+    }
+    
+    section {
+        padding: 1.25rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .company-overview h2 {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    p {
+        margin-bottom: 0.75rem !important;
+    }
 </style>
 
 <div class="hero">
     <div class="hero-content">
-        <div class="acronym-container">
-            <h1 class="acronym-title">OGABAL</h1>
-            <p class="acronym-explanation">OFFICIAL GOVERNMENT ASSISTANCE FOR BUSINESSES AND APPLICATION LOGISTICS</p>
-        </div>
         <h2>Innovative <span>Software Solutions</span> for Government Agencies</h2>
         <p class="tagline">OGABAL Limited delivers secure, scalable, and compliant technology solutions tailored for federal and defense requirements</p>
         
@@ -64,8 +96,7 @@ get_header();
             <p>OGABAL stands at the forefront of delivering innovative technology solutions 
             tailored to the evolving needs of the DoD and other government agencies. With a 
             focus on efficiency, security, and scalability, we leverage cutting-edge technologies 
-            and a robust understanding of mission-critical operations to empower clients to 
-            achieve their objectives.</p>
+            and a robust understanding of mission-critical operations to empower clients.</p>
             
             <p>Founded by a Navy veteran and experienced software engineer, OGABAL combines technical expertise with a commitment to excellence 
             and service.</p>
@@ -105,7 +136,7 @@ get_header();
         }
         ?>
         
-        <div style="text-align: center; margin-top: 2rem;">
+        <div style="text-align: center; margin-top: 1rem;">
             <a href="<?php echo home_url('/about'); ?>" class="button">Learn More About Us</a>
         </div>
     </section>

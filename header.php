@@ -31,7 +31,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: var(--text) !important;
             background-color: var(--primary) !important;
             display: flex;
@@ -66,7 +66,7 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
             background-color: var(--primary) !important;
         }
 
@@ -77,7 +77,7 @@
             background-image: linear-gradient(135deg, rgba(26, 32, 44, 0.95), rgba(15, 18, 25, 0.98));
             background-size: 300px 300px;
             background-position: center;
-            padding: 6rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
             border-bottom: 1px solid var(--border);
             position: relative;
@@ -85,7 +85,7 @@
             border-radius: 10px;
             border: 1px solid var(--border);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .hero-content {
@@ -94,9 +94,9 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
             color: var(--text) !important;
         }
@@ -108,9 +108,9 @@
         }
 
         .hero .tagline {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem;
             color: var(--text-muted) !important;
         }
 
@@ -120,8 +120,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem 0;
-            margin-bottom: 1rem;
+            padding: 0.75rem 0;
+            margin-bottom: 0.5rem;
             background-color: var(--secondary) !important;
             border-bottom: 1px solid var(--border);
         }
@@ -138,7 +138,7 @@
         }
 
         .logo-text {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: 2px;
             background: linear-gradient(90deg, var(--accent), var(--accent-light));
@@ -146,11 +146,11 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .logo-tagline {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             font-weight: 400;
             letter-spacing: 1px;
@@ -162,20 +162,20 @@
             width: 100%;
             background-color: var(--secondary) !important;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .nav-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0.5rem 2rem;
             display: flex;
             justify-content: center;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .nav-links ul {
@@ -183,7 +183,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .nav-links li {
@@ -194,7 +194,7 @@
             color: var(--text) !important;
             text-decoration: none;
             font-weight: 500;
-            padding: 0.5rem 0;
+            padding: 0.25rem 0;
             transition: color 0.3s;
             position: relative;
         }
@@ -223,7 +223,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .badge {
@@ -243,8 +243,8 @@
         /* Enhanced Section Titles with Borders */
         h1, h2, h3, .section-title {
             position: relative;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
 
@@ -277,8 +277,8 @@
         section {
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 3rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
             background-color: var(--secondary) !important;
         }
 
@@ -286,8 +286,8 @@
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
 
         .feature-card {
@@ -296,7 +296,7 @@
             flex-direction: column;
             background-color: var(--card-bg) !important;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             border: 1px solid var(--border);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -308,8 +308,8 @@
         }
 
         .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
             background: linear-gradient(90deg, var(--accent), var(--accent-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -364,20 +364,44 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             main, .content {
-                padding: 1rem;
+                padding: 0.5rem;
             }
             
             section {
-                padding: 1.5rem;
+                padding: 1rem;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .hero .tagline {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
+        }
+        
+        /* Header acronym styling - more compact */
+        .header-acronym {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .header-acronym .acronym-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.1rem;
+            letter-spacing: 1px;
+        }
+        
+        .header-acronym .acronym-explanation {
+            font-size: 0.6rem;
+            letter-spacing: 0.5px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+        
+        .header-acronym .acronym-explanation::after {
+            display: none;
         }
     </style>
     
@@ -416,7 +440,10 @@
 <div class="logo-container">
     <div class="centered-logo">
         <a href="<?php echo home_url(); ?>">
-            <span class="logo-text">OGABAL</span>
+            <div class="acronym-container header-acronym">
+                <h1 class="acronym-title">OGABAL</h1>
+                <p class="acronym-explanation">OFFICIAL GOVERNMENT ASSISTANCE FOR BUSINESSES AND APPLICATION LOGISTICS</p>
+            </div>
         </a>
     </div>
 </div>
