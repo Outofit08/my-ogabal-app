@@ -139,9 +139,9 @@
             background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/warfighterDrone.webp'); ?>');
             background-size: cover;
             background-position: center center;
-            opacity: 0.15;
+            opacity: 0.35;
             z-index: 0;
-            filter: brightness(0.6) contrast(1.1);
+            filter: brightness(0.9) contrast(1.2);
         }
         
         /* Add dark overlay to ensure text readability */
@@ -152,7 +152,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, rgba(26, 32, 44, 0.85), rgba(15, 18, 25, 0.9));
+            background: linear-gradient(90deg, rgba(26, 32, 44, 0.65), rgba(15, 18, 25, 0.7));
             z-index: 1;
         }
 
